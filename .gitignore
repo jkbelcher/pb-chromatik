@@ -1,0 +1,44 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.idea/
+.vscode/
+*.iml
+*.bak
+*.swp
+.settings/
+.classpath
+.project
+
+# Environment
+.env
+*.env.local
+
+# Java
+*.class
+*.jar
+*.war
+.gradle/
+gradle/wrapper/gradle-wrapper.jar
+
+# Build output
+/bin
+/*/bin/
+/tmp
+/doc
+build/
+dist/
+target/
+
+# Logs
+logs/
+*.log
+
+# Test
+coverage/
+
+# Claude
+.claude/settings.local.json
+CLAUDE.local.md
