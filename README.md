@@ -31,6 +31,7 @@ This plugin benefitted extensively from [ZRanger1](https://github.com/zranger1)'
 1. Download or build `pb-<version>.jar` (see below).
 
 2. Install the plugin, either:
+
    A. Move it to your `~/Chromatik/Packages/` directory, then restart Chromatik, *or:*
 
    B. Drag and drop it onto your running Chromatik window 
@@ -49,7 +50,7 @@ This plugin benefitted extensively from [ZRanger1](https://github.com/zranger1)'
 mvn clean package
 ```
 
-The built JAR lands in `target/`. To build and auto-copy it into a sibling `ChromatikHome/Packages/` directory:
+The built JAR lands in `target/`. To build and auto-copy it to `~/Chromatik/Packages/`:
 
 ```sh
 mvn clean install -Pinstall
