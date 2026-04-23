@@ -1,0 +1,15 @@
+{
+  name: "Pixelblaze",
+  mediaDir: "pixelblaze",
+  author: "Justin K. Belcher",
+  url: "https://github.com/jkbelcher/pb-chromatik",
+  
+  build: {
+    name: "@project.name@",
+    version: "@project.version@",
+    groupId: "@project.groupId@",
+    artifactId: "@project.artifactId@",
+    lxVersion: "@lx.version@",
+    buildTimestamp: "@maven.build.timestamp@"
+  }
+}
