@@ -14,6 +14,7 @@ import heronarts.lx.LXPlugin;
 import heronarts.lx.studio.LXStudio;
 
 import studio.jkb.pb.ui.UIPixelblazeComponent;
+import studio.jkb.pb.ui.UISensorBoardComponent;
 
 @LXPlugin.Name("Pixelblaze")
 public class PixelblazePlugin implements LXStudio.Plugin {
@@ -35,6 +36,9 @@ public class PixelblazePlugin implements LXStudio.Plugin {
   @Override
   public void onUIReady(LXStudio lxStudio, LXStudio.UI ui) {
     new UIPixelblazeComponent(ui, this.pb, ui.leftPane.global.getContentWidth())
+      .addBeforeSibling(ui.leftPane.palette);
+
+    new UISensorBoardComponent(ui, this.pb.sensor, ui.leftPane.global.getContentWidth())
       .addBeforeSibling(ui.leftPane.palette);
   }
 

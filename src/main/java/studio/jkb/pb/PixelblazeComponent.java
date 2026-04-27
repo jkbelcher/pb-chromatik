@@ -61,6 +61,8 @@ public class PixelblazeComponent extends LXComponent
     return current;
   }
 
+  public final SensorBoardComponent sensor;
+
   // Listeners
 
   public interface Listener {
@@ -70,14 +72,11 @@ public class PixelblazeComponent extends LXComponent
 
   private final List<Listener> listeners = new ArrayList<>();
 
-  // Discovery
-
   private final PixelblazeDiscovery discovery;
 
   private final List<PixelblazeDevice> devices = new ArrayList<>();
 
   // Active device (currently focused for the UI)
-
   private PixelblazeDevice activeDevice;
 
   // Color sync
@@ -111,6 +110,10 @@ public class PixelblazeComponent extends LXComponent
     new LXPalette.IndexSelector("Palette Index")
       .setDescription("Swatch index in the global palette for color sync with Chromatik");
 
+  public final BooleanParameter uiExpanded =
+    new BooleanParameter("UI Expanded", true)
+      .setDescription("Whether the UI section for Pixelblaze is expanded");
+
   private final LXParameterListener activeConnectedListener =
     p -> this.connected.setValue(((BooleanParameter) p).isOn());
 
@@ -128,6 +131,7 @@ public class PixelblazeComponent extends LXComponent
     addParameter(KEY_CONNECTED, this.connected);
     addParameter("colorSyncMode", this.colorSyncMode);
     addParameter("paletteIndex", this.paletteIndex);
+    addInternalParameter("uiExpanded", this.uiExpanded);
 
     this.discovery = new PixelblazeDiscovery(lx, this);
 
@@ -138,6 +142,8 @@ public class PixelblazeComponent extends LXComponent
         this.paletteTracker.setColor(color);
       }
     };
+
+    addChild("sensor", this.sensor = new SensorBoardComponent(lx));
   }
 
   // Parameter changes
@@ -189,6 +195,8 @@ public class PixelblazeComponent extends LXComponent
     if (this.activeDevice != null) {
       this.activeDevice.loop(deltaMs);
     }
+
+    this.sensor.loop(deltaMs);
   }
 
   // PixelblazeDiscovery.Listener
@@ -369,7 +377,6 @@ public class PixelblazeComponent extends LXComponent
   public void dispose() {
     this.enabled.setValue(false);
     setActiveDevice(null);
-
     this.paletteTracker.dispose();
     current = null;
     super.dispose();

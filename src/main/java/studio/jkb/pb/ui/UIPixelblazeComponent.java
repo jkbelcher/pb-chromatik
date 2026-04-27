@@ -43,7 +43,7 @@ public class UIPixelblazeComponent extends UICollapsibleSection {
   private final PixelblazeComponent.Listener pbListener;
 
   public UIPixelblazeComponent(UI ui, PixelblazeComponent pb, float w) {
-    super(ui, 0, 0, w, 0);
+    super(ui, w, 0, pb.uiExpanded);
     this.ui = ui;
     this.pb = pb;
     setTitle("PIXELBLAZE");

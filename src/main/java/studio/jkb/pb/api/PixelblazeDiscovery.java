@@ -30,7 +30,6 @@ import studio.jkb.pb.LOG;
 public class PixelblazeDiscovery {
 
   public static final int DISCOVERY_PORT = 1889;
-  private static final int BEACON_TYPE = 42;
   private static final int BEACON_LENGTH = 12;
 
   private static final long STALE_TIMEOUT_MS = 5000;
@@ -132,7 +131,7 @@ public class PixelblazeDiscovery {
     byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
 
     int packetType = byteBuffer.getInt();
-    if (packetType != BEACON_TYPE) {
+    if (packetType != PacketType.BEACON) {
       return;
     }
 
