@@ -8,7 +8,7 @@ A [Chromatik](https://chromatik.co) plugin for discovering and connecting to [Pi
 
 Thanks to [Ben Hencke](https://github.com/simap) for development and ongoing maintenance of the Pixelblaze platform and [WebSocket API](https://electromage.com/docs/websockets-api).
 
-This plugin benefitted extensively from [ZRanger1](https://github.com/zranger1)'s work on the [pixelblaze-client](https://github.com/zranger1/pixelblaze-client) project.
+This plugin benefitted extensively from [ZRanger1](https://github.com/zranger1)'s work on [pixelblaze-client](https://github.com/zranger1/pixelblaze-client) and [SoundServerFX](https://github.com/zranger1/SoundServerFX).
 
 ## Features
 
@@ -19,6 +19,7 @@ This plugin benefitted extensively from [ZRanger1](https://github.com/zranger1)'
 - User controls (sliders, color pickers, etc.)
 - Information pop-up (version, memory usage, etc.)
 - Bidirectional color sync with Chromatik's global palette
+- Sends Pixelblaze Sensor Board packets containing Chromatik's FFT and user-mappable sensor parameters
 
 ## Requirements
 
