@@ -8,6 +8,7 @@ package studio.jkb.pb;
 import heronarts.lx.LX;
 import heronarts.lx.LXComponent;
 import heronarts.lx.parameter.BooleanParameter;
+import heronarts.lx.parameter.BoundedParameter;
 import heronarts.lx.parameter.CompoundParameter;
 
 import heronarts.lx.parameter.DiscreteParameter;
@@ -35,18 +36,21 @@ public class SensorBoardComponent extends LXComponent {
   public final CompoundParameter accelX =
     new CompoundParameter("Accel X", 0, -32767, 32767)
       .setPolarity(LXParameter.Polarity.BIPOLAR)
+      .setNormalizationCurve(BoundedParameter.NormalizationCurve.BIAS_CENTER)
       .setExponent(ACCELEROMETER_EXPONENT)
       .setDescription("Sensor board accelerometer X axis");
 
   public final CompoundParameter accelY =
     new CompoundParameter("Accel Y", 0, -32767, 32767)
       .setPolarity(LXParameter.Polarity.BIPOLAR)
+      .setNormalizationCurve(BoundedParameter.NormalizationCurve.BIAS_CENTER)
       .setExponent(ACCELEROMETER_EXPONENT)
       .setDescription("Sensor board accelerometer Y axis");
 
   public final CompoundParameter accelZ =
     new CompoundParameter("Accel Z", 0, -32767, 32767)
       .setPolarity(LXParameter.Polarity.BIPOLAR)
+      .setNormalizationCurve(BoundedParameter.NormalizationCurve.BIAS_CENTER)
       .setExponent(ACCELEROMETER_EXPONENT)
       .setDescription("Sensor board accelerometer Z axis");
 
