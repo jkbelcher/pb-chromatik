@@ -32,7 +32,7 @@ import heronarts.lx.utils.LXUtils;
 import studio.jkb.pb.LOG;
 
 /**
- * Emulates a Pixelblaze Sensor Expansion Board by broadcasting 116-byte
+ * Emulates a Pixelblaze Sensor Expansion Board by broadcasting 104-byte
  * UDP sensor packets to the local network. The frequency bands are populated
  * from the Chromatik audio engine FFT, mapped to the 32 documented Pixelblaze
  * sensor board bands.
@@ -42,7 +42,7 @@ import studio.jkb.pb.LOG;
 public class SensorBoard {
 
   private static final int BROADCAST_PORT = 1889;
-  private static final int PACKET_SIZE = 116;
+  private static final int PACKET_SIZE = 104;
   private static final int EXPANSION_TYPE = 1;
   public static final int NUM_BANDS = 32;
   private static final float FFT_SCALE = 8192f;
