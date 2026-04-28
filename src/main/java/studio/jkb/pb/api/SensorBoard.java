@@ -45,7 +45,7 @@ public class SensorBoard {
   private static final int PACKET_SIZE = 104;
   private static final int EXPANSION_TYPE = 1;
   public static final int NUM_BANDS = 32;
-  private static final float FFT_SCALE = 8192f;
+  private static final float FFT_SCALE = 65535f;
 
   /**
    * Frequency band edges (Hz) for the Pixelblaze sensor board's 32 bands
